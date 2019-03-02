@@ -11,3 +11,6 @@
 | ------| -----| -----| ----| --------| ------|
 | order_id  | int(11) | NO | PRI | NULL | auto_increment |
 
+# Import tables from mySql to Hadoop cluster
+sqoop import --connect "jdbc:mysql://SOURCE/dbname" --username USERNAME --password PASSWORD --table orders --target-dir /TARGET_LOCATION/orders
+sqoop import --connect "jdbc:mysql://SOURCE/dbname" --username USERNAME --password PASSWORD --table order_items --target-dir /TARGET_LOCATION/order_items
