@@ -40,5 +40,5 @@
 # Import tables from mySql to Hadoop cluster
 * sqoop import --connect "jdbc:mysql://mysql/retail_db" --username USERNAME --password -P --table orders --target-dir /user/avmnrao/hadoop/python/orders
 * sqoop import --connect "jdbc:mysql://mysql/retail_db" --username USERNAME --password -P --table order_items --target-dir /user/avmnrao/hadoop/python/order_items
-* sqoop import --connect "jdbc:mysql://mysql/retail_db" --username USERNAME --password -P --table products --target-dir /user/avmnrao/hadoop/python/products
+* sqoop import --connect "jdbc:mysql://mysql/retail_db" --username USERNAME --password -P --table products --as-avrodatafile --target-dir /user/avmnrao/hadoop/python/productsAvro
 
