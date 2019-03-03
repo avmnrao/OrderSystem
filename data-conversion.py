@@ -8,4 +8,4 @@ sqlContext = SQLContext(sc)
 
 # imported jSon data saving on parquet format
 df = sqlContext.read.load("user/avmnrao/hadoop/python/productsAvro.json", format="json")
-df.select("name", "age").write.save("productsParq.parquet", format="parquet")
+df.select("product_id", "product_name", "product_price").write.save("productsParq.parquet", format="parquet")
