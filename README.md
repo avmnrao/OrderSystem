@@ -26,11 +26,6 @@
 | order_item_subtotal | float | NO |   | NULL |   |
 |order_item_product_price | float | NO |   | NULL |   |
 
-# Import tables from mySql to Hadoop cluster
-* sqoop import --connect "jdbc:mysql://mysql/retail_db" --username USERNAME --password PASSWORD --table orders --target-dir /user/avmnrao/hadoop/python/orders
-* sqoop import --connect "jdbc:mysql://mysql/retail_db" --username USERNAME --password PASSWORD --table order_items --target-dir /user/avmnrao/hadoop/python/order_items
-
-
 * products Table
 
 | Field | Type | Null | Key | Default | Extra |
@@ -42,4 +37,8 @@
 | product_price       | float        | NO |   | NULL |   |
 | product_image       | varchar(255) | NO |   | NULL |   |
 
+# Import tables from mySql to Hadoop cluster
+* sqoop import --connect "jdbc:mysql://mysql/retail_db" --username USERNAME --password PASSWORD --table orders --target-dir /user/avmnrao/hadoop/python/orders
+* sqoop import --connect "jdbc:mysql://mysql/retail_db" --username USERNAME --password PASSWORD --table order_items --target-dir /user/avmnrao/hadoop/python/order_items
 * sqoop import --connect "jdbc:mysql://SOURCE/dbname" --username USERNAME --password PASSWORD --table products --target-dir /user/avmnrao/hadoop/python/products
+
