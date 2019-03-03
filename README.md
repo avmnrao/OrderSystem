@@ -10,6 +10,21 @@
 | Field | Type | Null | Key | Default | Extra |
 | ------| -----| -----| ----| --------| ------|
 | order_id  | int(11) | NO | PRI | NULL | auto_increment |
+|order_date | datetime | NO |   | NULL |   |
+| order_customer_id | int(11) | NO |   | NULL |   |
+| order_status | varchar(45) | NO |   | NULL |   |
+
+
+* order_items Table
+
+| Field | Type | Null | Key | Default | Extra |
+| ------| -----| -----| ----| --------| ------|
+| order_item_id | int(11) | NO | PRI | NULL | auto_increment |
+| order_item_order_id | int(11) | NO |   | NULL |   |
+| order_item_product_id | int(11) | NO |   | NULL |   |
+| order_item_quantity | tinyint(4) | NO |   | NULL |   |
+| order_item_subtotal | float | NO |   | NULL |   |
+|order_item_product_price | float | NO |   | NULL |   |
 
 # Import tables from mySql to Hadoop cluster
 * sqoop import --connect "jdbc:mysql://mysql/retail_db" --username USERNAME --password PASSWORD --table orders --target-dir /user/avmnrao/hadoop/python/orders
