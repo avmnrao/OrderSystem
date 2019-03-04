@@ -1,17 +1,18 @@
+# Problem statement - get the revenue and number of orders from order_items on daily basis.
 # import packages
 import sys
 from operator import add
 from pyspark.sql import SparkSession
 from pyspark import SQLContext
 
-# Read the Orders and Order_Items data
+# Read the Orders and Order_Items tables data
 orders_RDD = sc.textFile("/user/avmnrao/hadoop/python/orders")
 orderItems_RDD = sc.textFile("/user/avmnrao/hadoop/python/order_items")
 
 # fetch the required field (key Order_id)
-ordersFetch = orders_RDD.map(lambda rec: (rec.split(",")[0], rec))
+ordersFetch = orders_RDD.map(lambda rec: (int(rec.split(",")[0]), rec))
 # fetch the required field (key Order_item_order_id)
-orderItemsFetch = orderItems_RDD.map(lambda rec: (rec.split(",")[1], rec))
+orderItemsFetch = orderItems_RDD.map(lambda rec: (int(rec.split(",")[1]), rec))
 
 # Join both Order and Order_Items datasets
 joinTables = orderItemsFetch.join(ordersFetch)
