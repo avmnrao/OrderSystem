@@ -1,5 +1,5 @@
 # Data Conversion from jSon to parquet
-# imported products table data from source to hadoop inn jSon format
+# imported products table data from source to hadoop in jSon format
 # import packages
 
 from pyspark.sql import SQLContext
